@@ -5,14 +5,16 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 const path = require("path")
 
-// app.get("/", function (request, response) {
-//   response.send("Hello World");
-// });
-
 app.set("view engine","ejs");
 
 app.get("/",async(request , response)=>{
-  const allTodos=await Todo.getTodos;
+  const allTodos=await Todo.getTodos();
+  //testing
+  // const overdue = await Todo.overdue();
+  // const dueToday = await Todo.dueToday();
+  // const dueLater = await Todo.dueLater();
+  // const completedItems = await Todo.markAsCompleted();
+  //testing end
   if (request.accepts("html")){
     response.render('index' ,{
       allTodos
