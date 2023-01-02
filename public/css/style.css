@@ -1,11 +1,14 @@
 body {
-    background-color: antiquewhite;
+    background-color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
 }
 footer {
     text-align: center;
 }
 table {
     text-align: center;
+}
+
+.Todo-item:hover .trash-icon {
+    display: block;
 }

@@ -10,12 +10,6 @@ app.use(express.static(path.join(__dirname , 'public')));
 
 app.get("/",async(request , response)=>{
   const allTodos=await Todo.getTodos();
-  //testing
-  // const overdue = await Todo.overdue();
-  // const dueToday = await Todo.dueToday();
-  // const dueLater = await Todo.dueLater();
-  // const completedItems = await Todo.markAsCompleted();
-  //testing end
   if (request.accepts("html")){
     response.render('index' ,{
       allTodos
@@ -60,7 +54,11 @@ app.get("/todos/:id", async function (request, response) {
 
 app.post("/todos", async function (request, response) {
   try {
-    const todo = await Todo.addTodo(request.body);
+    const todo = await Todo.addTodo({
+      title:request.body.title,
+      dueDate:request.body.dueDate,
+      markAsCompleted:false,
+    });
     return response.json(todo);
   } catch (error) {
     console.log(error);
