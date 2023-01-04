@@ -61,7 +61,7 @@ describe("Test todo application", () => {
     const getResponse = await agent.get("/");
     let csrfToken = fetchCsrfToken(getResponse);
     await agent.post("/todos").send({
-      title: "Delete functionality checking",
+      title: "Drink coffee",
       dueDate: new Date().toISOString(),
       completed: false,
       _csrf: csrfToken,
@@ -86,7 +86,7 @@ describe("Test todo application", () => {
     const getResponse = await agent.get("/");
     let csrfToken = fetchCsrfToken(getResponse);
     await agent.post("/todos").send({
-      title: "some changes of L9-1-1-1",
+      title: "Read book",
       dueDate: new Date().toISOString(),
       completed: false,
       _csrf: csrfToken,

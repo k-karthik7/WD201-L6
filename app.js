@@ -46,8 +46,7 @@ app.get("/todos", (request, response) => {
 app.post("/todos", async (request, response) => {
   console.log("Todo List");
   try {
-    console.log("entering in try block");
-    const todo = await Todo.addTodo({
+    await Todo.addTodo({
       title: request.body.title,
       dueDate: request.body.dueDate,
     });
@@ -69,15 +68,13 @@ app.put("/todos/:id", async (request, response) => {
 });
 
 app.delete("/todos/:id", async function (request, response) {
-  console.log("We have to delete a Todo with ID: ", request.params.id);
-  // FILL IN YOUR CODE HERE
-
-  // First, we have to query our database to delete a Todo by ID.
-  // eslint-disable-next-line max-len
-  // Then, we have to respond back with true/false based on whether the Todo was deleted or not.
-  // response.send(true)
-  const deleteFlag = await Todo.destroy({ where: { id: request.params.id } });
-  response.send(deleteFlag ? true : false);
+  console.log("Delete a todo by ID ", request.params.id);
+  try {
+    await Todo.remove(request.params.id);
+    return response.json({ success: true });
+  } catch (error) {
+    return response.status(422).json(error);
+  }
 });
 
 module.exports = app;

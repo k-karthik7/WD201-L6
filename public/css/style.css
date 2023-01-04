@@ -9,7 +9,6 @@ table {
   text-align: center;
 }
 
-.Todo-item:hover .trash-icon{
+.Todo-item:hover .trash-icon {
   display: block;
 }
-
