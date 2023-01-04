@@ -7,14 +7,12 @@
     <meta name="csrf-token" content="<%= csrfToken %>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="./css/styles.css" rel="stylesheet"> 
-    <title>Document</title>
+    <title>My Todo Application</title>
     <script>
         var token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
         function updateTodo(id)
         {
-            // console.log('/todos/${id}/markAsCompleted');
             const currentStatus = document.querySelector(`.todo-check-${id}`).checked;
-            //console.log(currentStatus);
             fetch(`/todos/${id}`, {
                 method: "put",
                 headers: {

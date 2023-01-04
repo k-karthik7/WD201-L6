@@ -1,23 +1,15 @@
 body {
-    background-color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 footer {
-    text-align: center;
+  text-align: center;
 }
 table {
-    text-align: center;
+  text-align: center;
 }
 
-.Todo-item:hover .trash-icon {
-    display: block;
-}
-
-/* body{
-    color:grey;
-    /* background-color: green; */
-    /* font-family: 'Courier New', Courier, monospace;
-}
 .Todo-item:hover .trash-icon{
-    display: block;
-    } */ 
+  display: block;
+}
+
