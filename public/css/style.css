@@ -1,5 +1,5 @@
 body {
-    background-color:white;
+    background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 footer {
@@ -12,3 +12,12 @@ table {
 .Todo-item:hover .trash-icon {
     display: block;
 }
+
+/* body{
+    color:grey;
+    /* background-color: green; */
+    /* font-family: 'Courier New', Courier, monospace;
+}
+.Todo-item:hover .trash-icon{
+    display: block;
+    } */ 
