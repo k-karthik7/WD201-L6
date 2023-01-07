@@ -140,6 +140,10 @@ app.post("/users", async (request, response) => {
     request.flash("error", "Please enter your Email ID");
     return response.redirect("/signup");
   }
+  if (!request.body.password) {
+    request.flash("error", "Please create your password");
+    return response.redirect("/signup");
+  }
   const hashedPwd = await bcrypt.hash(request.body.password, saltRounds);
   try {
     const user = await User.create({
